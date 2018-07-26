@@ -53,9 +53,6 @@ namespace KzBot2
             Point pt = new Point(229, 352);
             Point pt2 = new Point(187, 300);
 
-            var test = new InputForm();
-            test.Show();
-
             IntPtr NoxhWnd = FindWindow("Qt5QWindowIcon", null); //specify Nox Emulator name if multiple instances
 
             //SetForegroundWindow(NoxhWnd);
