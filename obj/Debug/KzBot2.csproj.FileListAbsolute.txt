@@ -1,0 +1,10 @@
+C:\Users\HUANGFK\source\repos\WindowsFormsApp1\KzBot2.0\bin\Debug\KzBot2.0.exe
+C:\Users\HUANGFK\source\repos\WindowsFormsApp1\KzBot2.0\bin\Debug\KzBot2.0.pdb
+C:\Users\HUANGFK\source\repos\WindowsFormsApp1\KzBot2.0\obj\Debug\KzBot2.csprojAssemblyReference.cache
+C:\Users\HUANGFK\source\repos\WindowsFormsApp1\KzBot2.0\obj\Debug\KzBot2.InputForm.resources
+C:\Users\HUANGFK\source\repos\WindowsFormsApp1\KzBot2.0\obj\Debug\KzBot2.Form1.resources
+C:\Users\HUANGFK\source\repos\WindowsFormsApp1\KzBot2.0\obj\Debug\KzBot2.0.Properties.Resources.resources
+C:\Users\HUANGFK\source\repos\WindowsFormsApp1\KzBot2.0\obj\Debug\KzBot2.csproj.GenerateResource.cache
+C:\Users\HUANGFK\source\repos\WindowsFormsApp1\KzBot2.0\obj\Debug\KzBot2.csproj.CoreCompileInputs.cache
+C:\Users\HUANGFK\source\repos\WindowsFormsApp1\KzBot2.0\obj\Debug\KzBot2.0.exe
+C:\Users\HUANGFK\source\repos\WindowsFormsApp1\KzBot2.0\obj\Debug\KzBot2.0.pdb

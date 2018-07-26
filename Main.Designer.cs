@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace KzBot2
 {
     partial class Form1
     {

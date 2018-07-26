@@ -9,8 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using Microsoft.VisualBasic;
 
-namespace WindowsFormsApp1
+namespace KzBot2
 {
     public partial class Form1 : Form
     {
@@ -51,6 +52,10 @@ namespace WindowsFormsApp1
         {
             Point pt = new Point(229, 352);
             Point pt2 = new Point(187, 300);
+
+            var test = new InputForm();
+            test.Show();
+
             IntPtr NoxhWnd = FindWindow("Qt5QWindowIcon", null); //specify Nox Emulator name if multiple instances
 
             //SetForegroundWindow(NoxhWnd);
@@ -63,5 +68,8 @@ namespace WindowsFormsApp1
             SendMessage(NoxhWnd, (int)WM.WM_LBUTTONDOWN, 1, MAKELPARAM(pt2.X, pt2.Y));
             SendMessage(NoxhWnd, (int)WM.WM_MOUSEMOVE, 0, MAKELPARAM(pt2.X, pt2.Y));
         }
+        
+
+
     }
 }
