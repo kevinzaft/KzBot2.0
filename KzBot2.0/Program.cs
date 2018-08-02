@@ -15,7 +15,7 @@ namespace KzBot2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(FormProvider.MainForm);
         }
     }
 }
