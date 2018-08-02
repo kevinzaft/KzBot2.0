@@ -7,5 +7,6 @@ namespace KzBot2
 {
     class ScriptMethods
     {
+
     }
 }
