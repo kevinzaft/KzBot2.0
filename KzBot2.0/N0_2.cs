@@ -7,5 +7,9 @@ namespace KzBot2
 {
     class N0_2
     {
+        public void StartRun()
+        {
+
+        }
     }
 }

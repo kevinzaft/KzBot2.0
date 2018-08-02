@@ -52,8 +52,7 @@ namespace KzBot2
                 {
 
                 }
-                //Debug.Print(runs--.ToString());
-                //Thread.Sleep(1000);
+                runs--;
             }
 
 

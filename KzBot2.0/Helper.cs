@@ -10,13 +10,6 @@ namespace KzBot2
 {
     public static class Helper
     {
-        public enum WM : int
-        {
-            WM_MOUSEMOVE = 0x200,
-            WM_LBUTTONDOWN = 0x201,
-            WM_LBUTTONUP = 0X202,
-            WM_LBUTTONCLICK = 0X203
-        }
 //C++ imports
         [DllImport("user32.dll")]
         public static extern IntPtr WindowFromPoint(int xPoirnt, int yPoint);
@@ -26,6 +19,8 @@ namespace KzBot2
         public static extern IntPtr FindWindowEx(IntPtr parentHandel, IntPtr childAfter, String sClassName, String windowTitle);
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
         public static extern IntPtr SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImport("user32.dll")]
+        public static extern bool PostMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         public static extern int SetForegroundWindow(IntPtr hwnd);
         [DllImport("user32.dll")]
@@ -54,7 +49,16 @@ namespace KzBot2
             return bmp;
         }
     }
+    public enum WM : int
+    {
+        WM_MOUSEMOVE = 0x200,
+        WM_LBUTTONDOWN = 0x201,
+        WM_LBUTTONUP = 0X202,
+        WM_LBUTTONCLICK = 0X203,
+        WM_SETCURSOR = 0x0020,
 
+        MK_LBUTTON = 0x0001
+    }
     [StructLayout(LayoutKind.Sequential)]
     public struct RECT
     {
@@ -159,3 +163,19 @@ namespace KzBot2
         }
     }
 }
+//Point pt = new Point(229, 352);
+//Point pt2 = new Point(187, 300);
+
+//IntPtr NoxhWnd = Helper.FindWindow("Qt5QWindowIcon", null); //specify Nox Emulator name if multiple instances
+
+////SetForegroundWindow(NoxhWnd);
+
+//Thread.Sleep(2000);
+//Helper.SendMessage(NoxhWnd, (int)Helper.WM.WM_LBUTTONDOWN, 1, Helper.MAKELPARAM(pt.X, pt.Y)); //SendMessage(handle, (int)WM.WM_LBUTTONUP, 1, MAKELPARAM(pt.X, pt.Y));
+//Helper.SendMessage(NoxhWnd, (int)Helper.WM.WM_MOUSEMOVE, 0, Helper.MAKELPARAM(pt.X, pt.Y));
+
+//Thread.Sleep(1000);
+//Helper.SendMessage(NoxhWnd, (int)Helper.WM.WM_LBUTTONDOWN, 1, Helper.MAKELPARAM(pt2.X, pt2.Y));
+//Helper.SendMessage(NoxhWnd, (int)Helper.WM.WM_MOUSEMOVE, 0, Helper.MAKELPARAM(pt2.X, pt2.Y));
+
+//bool equal = ImageComparer.Compare(actual, expected);
