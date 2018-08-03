@@ -32,7 +32,17 @@ namespace KzBot2
         {
             return ((y << 16) | (x & 0xFFFF));
         }
-
+        public static IntPtr FindNox(string name = "")
+        {
+            return FindWindow("Qt5QWindowIcon", name);
+        }
+        public static IntPtr FindNoxInnerScreen(string name = "")
+        {
+            IntPtr NoxhWnd = FindNox(name);
+            IntPtr Child1 = FindWindowEx(NoxhWnd, IntPtr.Zero, null, "ScreenBoardClassWindow");
+            IntPtr Child2 = FindWindowEx(Child1, IntPtr.Zero, null, "QWidgetClassWindow");
+            return Child2;
+        }
         public static Bitmap Screenshot(IntPtr hwnd)
         {
             GetWindowRect(hwnd, out RECT rc); //used the proccess ID to set the Screenshot rectangle area
