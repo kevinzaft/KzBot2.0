@@ -160,28 +160,28 @@ namespace KzBot2
         public static void DeployTeam1()
         {
             ClickRange(188, 355, 255, 435);
-            Thread.Sleep(randomize.Next(1500, 2500));
+            Thread.Sleep(randomize.Next(2000, 3000));
             Ok_Execute_End_ButtonClick();
         }
 
         public static void DeployTeam2()
         {
             ClickRange(1040, 480, 1111, 555);
-            Thread.Sleep(randomize.Next(1500, 2500));
+            Thread.Sleep(randomize.Next(2000, 3000));
             Ok_Execute_End_ButtonClick();
         }
 
         public static void DeployTeam1_0_2()
         {
             ClickRange(222, 344, 305, 416);
-            Thread.Sleep(randomize.Next(1500, 2500));
+            Thread.Sleep(randomize.Next(2000, 3000));
             Ok_Execute_End_ButtonClick();
         }
 
         public static void DeployTeam2_0_2()
         {
             ClickRange(620, 350, 705, 425);
-            Thread.Sleep(randomize.Next(1500, 2500));
+            Thread.Sleep(randomize.Next(2000, 3000));
             Ok_Execute_End_ButtonClick();
         }
 
@@ -198,18 +198,14 @@ namespace KzBot2
         public static void ResupplyEchelon1()
         {
             ClickRange(188, 355, 255, 435);
-            Thread.Sleep(randomize.Next(15, 20));
-            ClickRange(188, 355, 255, 435);
-            Thread.Sleep(randomize.Next(1500, 2500));
+            Thread.Sleep(randomize.Next(2000, 2500));
             ResupplyClick();
         }
 
         public static void ResupplyEchelon1_0_2()
         {
             ClickRange(222, 344, 305, 416);
-            Thread.Sleep(randomize.Next(15, 20));
-            ClickRange(222, 344, 305, 416);
-            Thread.Sleep(randomize.Next(1500, 2500));
+            Thread.Sleep(randomize.Next(2000, 2500));
             ResupplyClick();
         }
 
@@ -286,27 +282,27 @@ namespace KzBot2
         public static void ChangeFilterRF()
         {
             ClickRange(1110, 270, 1250, 355);
-            Thread.Sleep(randomize.Next(1000, 1500));
+            Thread.Sleep(randomize.Next(1500, 2000));
             ClickRange(900, 390, 1060, 460);
-            Thread.Sleep(randomize.Next(1500, 2500));
+            Thread.Sleep(randomize.Next(2000, 3000));
             SelectUnit1();
         }
 
         public static void ChangeFilterAR()
         {
             ClickRange(1110, 270, 1250, 355);
-            Thread.Sleep(randomize.Next(1000, 1500));
+            Thread.Sleep(randomize.Next(1500, 2000));
             ClickRange(535, 480, 700, 545);
-            Thread.Sleep(randomize.Next(1500, 2500));
+            Thread.Sleep(randomize.Next(2000, 3000));
             SelectUnit1();
         }
 
         public static void ChangeFilterMG()
         {
             ClickRange(1110, 270, 1250, 355);
-            Thread.Sleep(randomize.Next(1000, 1500));
+            Thread.Sleep(randomize.Next(1500, 2000));
             ClickRange(720, 485, 875, 545);
-            Thread.Sleep(randomize.Next(1500, 2500));
+            Thread.Sleep(randomize.Next(2000, 3000));
             SelectUnit1();
         }
 
@@ -350,11 +346,11 @@ namespace KzBot2
         {
             while (!Helper.CompareMemCmp(formationButtonCurrent, formationButtonDefault))
             {
-                Thread.Sleep(randomize.Next(4000, 4500));
+                Thread.Sleep(randomize.Next(4500, 5000));
                 SelectRepairSlot();
-                Thread.Sleep(randomize.Next(500, 1000));
+                Thread.Sleep(randomize.Next(1000, 1500));
                 RepeatLogisticConfirmClick();
-                Thread.Sleep(randomize.Next(3500, 4000));
+                Thread.Sleep(randomize.Next(4000, 4500));
                 TakeFormationScreenShot();
             }
         }
@@ -364,21 +360,21 @@ namespace KzBot2
             while (!Helper.CompareMemCmp(repairButtonCurrent, repairButtonDefault))
             {
                 RepaireButtonClick();
-                Thread.Sleep(randomize.Next(2500, 4000));
+                Thread.Sleep(randomize.Next(3000, 4500));
                 SelectRepairSlot();
-                Thread.Sleep(randomize.Next(1500, 2000));
+                Thread.Sleep(randomize.Next(2000, 2500));
                 SelectRepairDoll();
-                Thread.Sleep(randomize.Next(1000, 1500));
-                RepairOkClick();
-                Thread.Sleep(randomize.Next(1000, 1500));
-                SelectQuickRepair();
-                Thread.Sleep(randomize.Next(1000, 1500));
-                RepairResourceCostOkClick();
                 Thread.Sleep(randomize.Next(1500, 2000));
+                RepairOkClick();
+                Thread.Sleep(randomize.Next(1500, 2000));
+                SelectQuickRepair();
+                Thread.Sleep(randomize.Next(1500, 2000));
+                RepairResourceCostOkClick();
+                Thread.Sleep(randomize.Next(2000, 2500));
                 ReturnToBaseClick();
-                Thread.Sleep(randomize.Next(500, 1000));
+                Thread.Sleep(randomize.Next(1000, 1500));
                 ReturnToBaseClick();
-                Thread.Sleep(randomize.Next(3500, 4000));
+                Thread.Sleep(randomize.Next(4500, 4500));
                 TakeFormationScreenShot();
             }
         }
