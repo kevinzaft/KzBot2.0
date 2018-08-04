@@ -250,7 +250,7 @@ namespace KzBot2
 
         public static void RepaireButtonClick()
         {
-            ClickRange(835, 1015, 265, 330);
+            ClickRange(835, 265, 1015, 330);
         }
 
         public static void SelectRepairSlot()
