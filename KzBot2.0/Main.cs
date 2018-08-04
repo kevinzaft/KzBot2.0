@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UITesting;
 using System.Drawing.Imaging;
+using System.Runtime.InteropServices;
 
 namespace KzBot2
 {
@@ -16,10 +17,9 @@ namespace KzBot2
         {
             InitializeComponent();
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //ScriptMethods.FormationClick();
         }
 
         private void button1_Click(object sender, EventArgs e)

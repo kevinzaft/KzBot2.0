@@ -5,9 +5,9 @@ using System.Text;
 
 namespace KzBot2
 {
-    class N0_2
+    public static class N0_2
     {
-        public void StartRun()
+        public static void StartRun()
         {
 
         }

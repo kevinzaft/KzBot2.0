@@ -13,21 +13,28 @@ namespace KzBot2
         public static Random randomize;
         public static IntPtr Nox;
         public static IntPtr NoxChild;
-        private static readonly string repairButtonCurrent;
-        private static readonly string repairButtonDefault;
+        public static readonly string repairButtonCurrent;
+        public static readonly string formationButtonCurrent;
+        public static readonly string repairButtonDefault;
+        public static readonly string formationButtonDefault;
         static ScriptMethods()
         {
             randomize = new Random();
             Nox = Helper.FindNox();
             NoxChild = Helper.FindNoxInnerScreen();
             repairButtonCurrent = Environment.CurrentDirectory + "\\Screenshots\\repairButtonCurrent.jpg";
+            formationButtonCurrent = Environment.CurrentDirectory + "\\Screenshots\\formationButtonCurrent.jpg";
+
             repairButtonDefault = Environment.CurrentDirectory + "\\Screenshots\\repairButtonDefault.jpg";
+            formationButtonDefault = Environment.CurrentDirectory + "\\Screenshots\\formationButtonDefault.jpg";
         }
 
         public static void ClickRange(int x1, int y1, int x2, int y2)
         {
             Point pt = new Point(randomize.Next(x1, x2), randomize.Next(y1, y2));
-            Helper.SendMessage(NoxChild, (int)WM.WM_LBUTTONCLICK, (int)WM.MK_LBUTTON, Helper.MAKELPARAM(pt.X, pt.Y)); //SendMessage(handle, (int)WM.WM_LBUTTONUP, 1, MAKELPARAM(pt.X, pt.Y));
+            Helper.SendMessage(Nox, (int)WM.WM_LBUTTONDOWN, (int)WM.MK_LBUTTON, Helper.MAKELPARAM(pt.X, pt.Y));
+            Helper.SendMessage(Nox, (int)WM.WM_MOUSEMOVE, 0, Helper.MAKELPARAM(pt.X, pt.Y));
+            Helper.SendMessage(Nox, (int)WM.WM_LBUTTONUP, (int)WM.MK_LBUTTON, Helper.MAKELPARAM(pt.X, pt.Y));
         }
         public static void DragRange(int x1, int y1, int x2, int y2, int xx1, int yy1, int xx2, int yy2)
         {
@@ -213,7 +220,7 @@ namespace KzBot2
 
         public static void MouseDragTopToBottom()
         {
-            DragRange(1130, 50, 1270, 50, 820, 740, 1120, 740);
+            DragRange(1130, 20, 1270, 20, 820, 710, 1120, 710);
         }
 
         public static void SelectNode1()
@@ -303,21 +310,22 @@ namespace KzBot2
             SelectUnit1();
         }
 
-        public static void RestartLogi()
+        public static void RestartLogis()
         {
-            Thread.Sleep(randomize.Next(4000, 4500));
-            SelectRepairSlot();
-            Thread.Sleep(randomize.Next(500, 1000));
-            RepeatLogisticConfirmClick();
-            Thread.Sleep(randomize.Next(3500, 4000));
-            var ss = Helper.Screenshot(Helper.FindNox());
-            var temp = ss.Clone(new Rectangle(1050, 440, 210, 90), ss.PixelFormat);
-            temp.Save(Environment.CurrentDirectory + "\\Screenshots\\formationButtonCurrent.jpg");
+            while (!Helper.CompareMemCmp(formationButtonCurrent, formationButtonDefault))
+            {
+                Thread.Sleep(randomize.Next(4000, 4500));
+                SelectRepairSlot();
+                Thread.Sleep(randomize.Next(500, 1000));
+                RepeatLogisticConfirmClick();
+                Thread.Sleep(randomize.Next(3500, 4000));
+                TakeFormationScreenShot();
+            }
         }
 
         public static void RepairLoop()
         {
-            while (!ImageComparer.Compare(Image.FromFile(repairButtonCurrent), Image.FromFile(repairButtonDefault)))
+            while (!Helper.CompareMemCmp(repairButtonCurrent, repairButtonDefault))
             {
                 RepaireButtonClick();
                 Thread.Sleep(randomize.Next(2500, 4000));
@@ -335,10 +343,32 @@ namespace KzBot2
                 Thread.Sleep(randomize.Next(500, 1000));
                 ReturnToBaseClick();
                 Thread.Sleep(randomize.Next(3500, 4000));
-                var ss = Helper.Screenshot(Helper.FindNox());
-                var temp = ss.Clone(new Rectangle(1050, 440, 210, 90), ss.PixelFormat);
-                temp.Save(Environment.CurrentDirectory + "\\Screenshots\\formationButtonCurrent.jpg");
+                TakeFormationScreenShot();
             }
+        }
+
+        public static void TakeRepairScreenShot()
+        {
+            if (System.IO.File.Exists(Environment.CurrentDirectory + "\\Screenshots\\repairButtonCurrent.jpg"))
+                System.IO.File.Delete(Environment.CurrentDirectory + "\\Screenshots\\repairButtonCurrent.jpg");
+
+            var ss = new Bitmap(Helper.Screenshot(Helper.FindNox()));
+            var temp = new Bitmap(ss.Clone(new Rectangle(835, 265, 180, 65), ss.PixelFormat));
+            temp.Save(Environment.CurrentDirectory + "\\Screenshots\\repairButtonCurrent.jpg");
+            ss.Dispose();
+            temp.Dispose();
+        }
+
+        public static void TakeFormationScreenShot()
+        {
+            if (System.IO.File.Exists(Environment.CurrentDirectory + "\\Screenshots\\formationButtonCurrent.jpg"))
+                System.IO.File.Delete(Environment.CurrentDirectory + "\\Screenshots\\formationButtonCurrent.jpg");
+
+            var ss = new Bitmap(Helper.Screenshot(Helper.FindNox()));
+            var temp = new Bitmap(ss.Clone(new Rectangle(1050, 440, 210, 90), ss.PixelFormat));
+            temp.Save(Environment.CurrentDirectory + "\\Screenshots\\formationButtonCurrent.jpg");
+            ss.Dispose();
+            temp.Dispose();
         }
     }
 }

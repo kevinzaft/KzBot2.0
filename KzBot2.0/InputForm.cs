@@ -14,12 +14,13 @@ namespace KzBot2
     public partial class InputForm : Form
     {
         public int runs = 0;
+        public string draggerType = "";
         public InputForm()
         {
             InitializeComponent();
         }
 
-        private void InputForm_Load(object sender, EventArgs e) { }
+        private void InputForm_Load(object sender, EventArgs e) { comboBox1.SelectedIndex = 0; }
         private void InputForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();
@@ -31,6 +32,7 @@ namespace KzBot2
         private void ok_button_Click(object sender, EventArgs e)
         {
             runs = Int32.Parse(numericUpDown1.Text);
+            draggerType = (string)comboBox1.SelectedItem;
             this.Hide();
             numericUpDown1.Value = 0;
             FormProvider.RunManagerForm.label2.Text = "Runs left: " + runs;
@@ -46,11 +48,11 @@ namespace KzBot2
             {
                 if (map.Equals("4-3E"))
                 {
-
+                    E4_3.StartRun(runs, draggerType);
                 }
                 else
                 {
-
+                    N0_2.StartRun();
                 }
                 runs--;
             }

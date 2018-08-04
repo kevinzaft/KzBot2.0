@@ -27,14 +27,16 @@ namespace KzBot2
         public static extern bool GetWindowRect(IntPtr hWnd, out RECT lpRect);
         [DllImport("user32.dll")]
         public static extern bool PrintWindow(IntPtr hWnd, IntPtr hdcBlt, int nFlags);
-//Helper Methods
+        [DllImport("msvcrt.dll")]
+        private static extern int memcmp(IntPtr b1, IntPtr b2, long count);
+        //Helper Methods
         public static int MAKELPARAM(int x, int y)
         {
             return ((y << 16) | (x & 0xFFFF));
         }
         public static IntPtr FindNox(string name = "")
         {
-            return FindWindow("Qt5QWindowIcon", name);
+            return FindWindow("Qt5QWindowIcon", name==""?null:name);
         }
         public static IntPtr FindNoxInnerScreen(string name = "")
         {
@@ -57,6 +59,34 @@ namespace KzBot2
             gfxBmp.Dispose();
 
             return bmp;
+        }
+        public static bool CompareMemCmp(String i1, String i2)
+        {
+            var b1 = (Bitmap)Image.FromFile(i1);
+            var b2 = (Bitmap)Image.FromFile(i2);
+            if ((b1 == null) != (b2 == null)) return false;
+            if (b1.Size != b2.Size) return false;
+
+            var bd1 = b1.LockBits(new Rectangle(new Point(0, 0), b1.Size), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+            var bd2 = b2.LockBits(new Rectangle(new Point(0, 0), b2.Size), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+
+            try
+            {
+                IntPtr bd1scan0 = bd1.Scan0;
+                IntPtr bd2scan0 = bd2.Scan0;
+
+                int stride = bd1.Stride;
+                int len = stride * b1.Height;
+
+                return memcmp(bd1scan0, bd2scan0, len) == 0;
+            }
+            finally
+            {
+                b1.UnlockBits(bd1);
+                b2.UnlockBits(bd2);
+                b1.Dispose();
+                b2.Dispose();
+            }
         }
     }
     public enum WM : int
