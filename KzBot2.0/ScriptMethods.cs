@@ -310,6 +310,42 @@ namespace KzBot2
             SelectUnit1();
         }
 
+        public static void SelectNode0_0_2()
+        {
+            ClickRange(620, 350, 700, 425);
+        }
+
+        public static void SelectNode1_0_2()
+        {
+            ClickRange(475, 275, 525, 310);
+        }
+
+        public static void SelectNode2_0_2()
+        {
+            ClickRange(505, 565, 565, 610);
+        }
+
+        public static void SelectNode3_0_2()
+        {
+            ClickRange(650, 365, 695, 405);
+        }
+
+        public static void SelectNode4_0_2()
+        {
+            ClickRange(500, 270, 550, 305);
+        }
+
+        public static void SelectNode5_0_2()
+        {
+            ClickRange(785, 270, 835, 310);
+        }
+
+        public static void SelectNode6_0_2()
+        {
+            ClickRange(965, 295, 1025, 355);
+        }
+
+
         public static void RestartLogis()
         {
             while (!Helper.CompareMemCmp(formationButtonCurrent, formationButtonDefault))

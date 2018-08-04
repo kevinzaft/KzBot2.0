@@ -52,7 +52,7 @@ namespace KzBot2
                 }
                 else
                 {
-                    N0_2.StartRun();
+                    N0_2.StartRun(runs, draggerType);
                 }
                 runs--;
             }
