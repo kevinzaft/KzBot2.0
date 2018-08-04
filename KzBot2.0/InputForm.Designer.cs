@@ -92,14 +92,14 @@
             "RF"});
             this.comboBox1.Location = new System.Drawing.Point(146, 60);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(95, 21);
+            this.comboBox1.Size = new System.Drawing.Size(75, 21);
             this.comboBox1.TabIndex = 6;
             // 
             // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(266, 126);
+            this.ClientSize = new System.Drawing.Size(259, 126);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
