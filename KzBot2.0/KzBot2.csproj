@@ -7,7 +7,7 @@
     <ProjectGuid>{1297FD37-A294-4A3F-9869-BD53B1BEA11D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>KzBot2.0</RootNamespace>
-    <AssemblyName>KzBot2.0</AssemblyName>
+    <AssemblyName>KzBot2</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,10 +34,6 @@
     <ApplicationIcon>375459870524047361.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.TestTools.UITesting.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

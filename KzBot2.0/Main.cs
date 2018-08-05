@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
 using System.Windows.Forms;
-using System.Threading;
-using Microsoft.VisualStudio.TestTools.UITesting;
-using System.Drawing.Imaging;
-using System.Runtime.InteropServices;
+
 
 namespace KzBot2
 {

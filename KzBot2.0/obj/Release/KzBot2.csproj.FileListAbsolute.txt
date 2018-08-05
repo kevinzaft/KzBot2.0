@@ -1,0 +1,11 @@
+C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\bin\Release\KzBot2.0.exe
+C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\bin\Release\KzBot2.0.pdb
+C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\obj\Release\KzBot2.csprojAssemblyReference.cache
+C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\obj\Release\KzBot2.InputForm.resources
+C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\obj\Release\KzBot2.Main.resources
+C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\obj\Release\KzBot2.0.Properties.Resources.resources
+C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\obj\Release\KzBot2.RunManagerForm.resources
+C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\obj\Release\KzBot2.csproj.GenerateResource.cache
+C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\obj\Release\KzBot2.csproj.CoreCompileInputs.cache
+C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\obj\Release\KzBot2.0.exe
+C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\obj\Release\KzBot2.0.pdb
