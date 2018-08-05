@@ -52,7 +52,7 @@ namespace KzBot2
 
         private Boolean NoxOpened()
         {
-            return ((int)Helper.FindWindow("Qt5QWindowIcon", NoxName) != 0);
+            return ((int)Helper.FindNox() != 0);
         }
 
         private void button3_Click(object sender, EventArgs e)
