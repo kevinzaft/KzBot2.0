@@ -1,5 +1,6 @@
 
 EDIT: ONLY WORKS WITH WIDESCREEN MONITORS RN (16:9) RATIO. Working on fix for non-widescreen things
+	-Implimented All resolution(16:9) fix. Need more testing. Recommened to stay with 1280x720.
 
 1) Must be using NOX on 1280x720 resolution on Windows
 	-Sometimes NOX doesnt actually use 1280x720 even if you select it and click apply. If this is the case, 
@@ -18,3 +19,6 @@ EDIT: ONLY WORKS WITH WIDESCREEN MONITORS RN (16:9) RATIO. Working on fix for no
 -Stop the script by pressing "Abort"
 -Don't Modify the ______Default.jpg files
 -If you have a potato or bad internet speed, then rip. PM me and maybe i'll impliment custom offsets
+
+-To reset formationButtonDefault.jpg and/or repairButtonDefault.jpg because you changed the resolution or something,
+ click the Formation/Repair buttons under the "Screenshots Reset" headder.

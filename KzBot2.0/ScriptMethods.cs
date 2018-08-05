@@ -375,8 +375,8 @@ namespace KzBot2
                 ReturnToBaseClick();
                 Thread.Sleep(randomize.Next(2500, 3000));
                 ReturnToBaseClick();
-                Thread.Sleep(randomize.Next(5500, 6000));
-                TakeFormationScreenShot();
+                Thread.Sleep(randomize.Next(6000, 6500));
+                TakeRepairScreenShot();
             }
         }
 
