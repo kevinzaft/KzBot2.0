@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 
 namespace KzBot2
 {
@@ -29,6 +26,9 @@ namespace KzBot2
         public static extern bool PrintWindow(IntPtr hWnd, IntPtr hdcBlt, int nFlags);
         [DllImport("msvcrt.dll")]
         private static extern int memcmp(IntPtr b1, IntPtr b2, long count);
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool GetWindowRect(HandleRef hWnd, out RECT lpRect);
         //Helper Methods
         public static int MAKELPARAM(int x, int y)
         {
@@ -87,6 +87,18 @@ namespace KzBot2
                 b1.Dispose();
                 b2.Dispose();
             }
+        }
+        public static RECT GetNoxRes()
+        {
+            RECT rct;
+            GetWindowRect(FindNox(), out rct);
+            return rct;
+        }
+        public static RECT GetNoxInnerRes()
+        {
+            RECT rct;
+            GetWindowRect(FindNoxInnerScreen(), out rct);
+            return rct;
         }
     }
     public enum WM : int

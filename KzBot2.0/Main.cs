@@ -20,7 +20,7 @@ namespace KzBot2
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            //ScriptMethods.FormationClick();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,6 +59,16 @@ namespace KzBot2
         private Boolean NoxOpened()
         {
             return ((int)Helper.FindWindow("Qt5QWindowIcon", null) != 0);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ScriptMethods.TakeFormationScreenShotDefault();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ScriptMethods.TakeRepairScreenShotDefault();
         }
     }
 }

@@ -1,10 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UITesting;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
 using System.Threading;
 
 namespace KzBot2
@@ -33,9 +29,9 @@ namespace KzBot2
         public static void ClickRange(int x1, int y1, int x2, int y2)
         {
             Point pt = new Point(randomize.Next(x1, x2), randomize.Next(y1, y2));
-            Helper.SendMessage(Nox, (int)WM.WM_LBUTTONDOWN, (int)WM.MK_LBUTTON, Helper.MAKELPARAM(pt.X, pt.Y));
-            Helper.SendMessage(Nox, (int)WM.WM_MOUSEMOVE, 0, Helper.MAKELPARAM(pt.X, pt.Y));
-            Helper.SendMessage(Nox, (int)WM.WM_LBUTTONUP, (int)WM.MK_LBUTTON, Helper.MAKELPARAM(pt.X, pt.Y));
+            Helper.SendMessage(Nox, (int)WM.WM_LBUTTONDOWN, (int)WM.MK_LBUTTON, Helper.MAKELPARAM((int)(pt.X *((double)Helper.GetNoxRes().Width/1284)), (int)(pt.Y * ((double)Helper.GetNoxRes().Height / 752))));
+            Helper.SendMessage(Nox, (int)WM.WM_MOUSEMOVE, 0, Helper.MAKELPARAM((int)(pt.X * ((double)Helper.GetNoxRes().Width / 1284)), (int)(pt.Y * ((double)Helper.GetNoxRes().Height / 752))));
+            Helper.SendMessage(Nox, (int)WM.WM_LBUTTONUP, (int)WM.MK_LBUTTON, Helper.MAKELPARAM((int)(pt.X * ((double)Helper.GetNoxRes().Width / 1284)), (int)(pt.Y * ((double)Helper.GetNoxRes().Height / 752))));
         }
         public static void DragRange(int x1, int y1, int x2, int y2, int xx1, int yy1, int xx2, int yy2)
         {
@@ -43,14 +39,14 @@ namespace KzBot2
             var pt2 = new Point(randomize.Next(xx1, xx2), randomize.Next(yy1, yy2));
             var mainDragDirection = Math.Abs(pt1.X - pt2.X) > Math.Abs(pt1.Y - pt2.Y) ? "x" : "y";
 
-            Helper.SendMessage(NoxChild, (int)WM.WM_LBUTTONDOWN, (int)WM.MK_LBUTTON, Helper.MAKELPARAM(pt1.X, pt1.Y));
+            Helper.SendMessage(NoxChild, (int)WM.WM_LBUTTONDOWN, (int)WM.MK_LBUTTON, Helper.MAKELPARAM((int)(pt1.X * ((double)Helper.GetNoxInnerRes().Width / 1280)), (int)(pt1.Y * ((double)Helper.GetNoxInnerRes().Height / 720))));
 
             if (mainDragDirection.Equals("x"))
             {
                 for (int x = pt1.X, y = pt1.Y; x < pt2.X; x += 10)
                 {
                     y = y < pt2.Y ? y + 5 : y;
-                    Helper.SendMessage(NoxChild, (int)WM.WM_MOUSEMOVE, (int)WM.MK_LBUTTON, Helper.MAKELPARAM(x, y));
+                    Helper.SendMessage(NoxChild, (int)WM.WM_MOUSEMOVE, (int)WM.MK_LBUTTON, Helper.MAKELPARAM((int)(x * ((double)Helper.GetNoxInnerRes().Width / 1280)), (int)(y * ((double)Helper.GetNoxInnerRes().Height / 720))));
                     Thread.Sleep(50);
                 }
             }
@@ -59,11 +55,11 @@ namespace KzBot2
                 for (int x = pt1.X, y = pt1.Y; y < pt2.Y; y += 10)
                 {
                     x = x < pt2.X ? x + 5 : x;
-                    Helper.SendMessage(NoxChild, (int)WM.WM_MOUSEMOVE, (int)WM.MK_LBUTTON, Helper.MAKELPARAM(x, y));
+                    Helper.SendMessage(NoxChild, (int)WM.WM_MOUSEMOVE, (int)WM.MK_LBUTTON, Helper.MAKELPARAM((int)(x * ((double)Helper.GetNoxInnerRes().Width / 1280)), (int)(y * ((double)Helper.GetNoxInnerRes().Height / 720))));
                     Thread.Sleep(50);
                 }
             }
-            Helper.SendMessage(NoxChild, (int)WM.WM_LBUTTONUP, 0, Helper.MAKELPARAM(pt2.X, pt2.Y));
+            Helper.SendMessage(NoxChild, (int)WM.WM_LBUTTONUP, 0, Helper.MAKELPARAM((int)(pt2.X * ((double)Helper.GetNoxInnerRes().Width / 1280)), (int)(pt2.Y * ((double)Helper.GetNoxInnerRes().Height / 720))));
         }
 
         //______________________________________________________________________________________________________________
@@ -389,7 +385,7 @@ namespace KzBot2
             if (System.IO.File.Exists(Environment.CurrentDirectory + "\\Screenshots\\repairButtonCurrent.jpg"))
                 System.IO.File.Delete(Environment.CurrentDirectory + "\\Screenshots\\repairButtonCurrent.jpg");
 
-            var ss = Helper.Screenshot(Helper.FindNox()).Clone(new Rectangle(835, 265, 180, 65), PixelFormat.DontCare);
+            var ss = Helper.Screenshot(Helper.FindNox()).Clone(new Rectangle((int)(835 * ((double)Helper.GetNoxRes().Width / 1284)), (int)(265 * ((double)Helper.GetNoxRes().Height / 752)), (int)(180 * ((double)Helper.GetNoxRes().Width / 1284)), (int)(65 * ((double)Helper.GetNoxRes().Height / 752))), PixelFormat.DontCare);
             //var temp = new Bitmap(ss.Clone(new Rectangle(835, 265, 180, 65), ss.PixelFormat));
             ss.Save(Environment.CurrentDirectory + "\\Screenshots\\repairButtonCurrent.jpg");
             ss.Dispose();
@@ -401,9 +397,33 @@ namespace KzBot2
             if (System.IO.File.Exists(Environment.CurrentDirectory + "\\Screenshots\\formationButtonCurrent.jpg"))
                 System.IO.File.Delete(Environment.CurrentDirectory + "\\Screenshots\\formationButtonCurrent.jpg");
 
-            var ss = Helper.Screenshot(Helper.FindNox()).Clone(new Rectangle(1050, 440, 210, 90), PixelFormat.DontCare);
+            var ss = Helper.Screenshot(Helper.FindNox()).Clone(new Rectangle((int)(1050 * ((double)Helper.GetNoxRes().Width / 1284)), (int)(440 * ((double)Helper.GetNoxRes().Height / 752)), (int)(210 * ((double)Helper.GetNoxRes().Width / 1284)), (int)(90 * ((double)Helper.GetNoxRes().Height / 752))), PixelFormat.DontCare);
             //var temp = new Bitmap(ss.Clone(new Rectangle(1050, 440, 210, 90), ss.PixelFormat));
             ss.Save(Environment.CurrentDirectory + "\\Screenshots\\formationButtonCurrent.jpg");
+            ss.Dispose();
+            //temp.Dispose();
+        }
+
+        public static void TakeRepairScreenShotDefault()
+        {
+            if (System.IO.File.Exists(Environment.CurrentDirectory + "\\Screenshots\\repairButtonDefault.jpg"))
+                System.IO.File.Delete(Environment.CurrentDirectory + "\\Screenshots\\repairButtonDefault.jpg");
+
+            var ss = Helper.Screenshot(Helper.FindNox()).Clone(new Rectangle((int)(835 * ((double)Helper.GetNoxRes().Width / 1284)), (int)(265 * ((double)Helper.GetNoxRes().Height / 752)), (int)(180 * ((double)Helper.GetNoxRes().Width / 1284)), (int)(65 * ((double)Helper.GetNoxRes().Height / 752))), PixelFormat.DontCare);
+            //var temp = new Bitmap(ss.Clone(new Rectangle(835, 265, 180, 65), ss.PixelFormat));
+            ss.Save(Environment.CurrentDirectory + "\\Screenshots\\repairButtonDefault.jpg");
+            ss.Dispose();
+            //temp.Dispose();
+        }
+
+        public static void TakeFormationScreenShotDefault()
+        {
+            if (System.IO.File.Exists(Environment.CurrentDirectory + "\\Screenshots\\formationButtonDefault.jpg"))
+                System.IO.File.Delete(Environment.CurrentDirectory + "\\Screenshots\\formationButtonDefault.jpg");
+
+            var ss = Helper.Screenshot(Helper.FindNox()).Clone(new Rectangle((int)(1050 * ((double)Helper.GetNoxRes().Width / 1284)), (int)(440 * ((double)Helper.GetNoxRes().Height / 752)), (int)(210 * ((double)Helper.GetNoxRes().Width / 1284)), (int)(90 * ((double)Helper.GetNoxRes().Height / 752))), PixelFormat.DontCare);
+            //var temp = new Bitmap(ss.Clone(new Rectangle(1050, 440, 210, 90), ss.PixelFormat));
+            ss.Save(Environment.CurrentDirectory + "\\Screenshots\\formationButtonDefault.jpg");
             ss.Dispose();
             //temp.Dispose();
         }
