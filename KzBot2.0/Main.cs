@@ -19,12 +19,12 @@ namespace KzBot2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            NoxName = textBox1.Text;
             if (!NoxOpened())
             {
                 MessageBox.Show("Could not find Nox Player", "Nox Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            NoxName = textBox1.Text;
             GetRuns();
             SelectedMap = "4-3E";
             FormProvider.RunManagerForm.Text = "Running " + SelectedMap;
@@ -33,12 +33,12 @@ namespace KzBot2
 
         private void button2_Click(object sender, EventArgs e)
         {
+            NoxName = textBox1.Text;
             if (!NoxOpened())
             {
                 MessageBox.Show("Could not find Nox Player", "Nox Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            NoxName = textBox1.Text;
             GetRuns();
             SelectedMap = "0-2";
             FormProvider.RunManagerForm.Text = "Running " + SelectedMap;
@@ -52,7 +52,7 @@ namespace KzBot2
 
         private Boolean NoxOpened()
         {
-            return ((int)Helper.FindWindow("Qt5QWindowIcon", null) != 0);
+            return ((int)Helper.FindWindow("Qt5QWindowIcon", NoxName) != 0);
         }
 
         private void button3_Click(object sender, EventArgs e)
