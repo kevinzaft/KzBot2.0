@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -198,14 +199,18 @@ namespace KzBot2
         public static void ResupplyEchelon1()
         {
             ClickRange(188, 355, 255, 435);
-            Thread.Sleep(randomize.Next(2000, 2500));
+            Thread.Sleep(randomize.Next(30, 40));
+            ClickRange(188, 355, 255, 435);
+            Thread.Sleep(randomize.Next(2500, 3000));
             ResupplyClick();
         }
 
         public static void ResupplyEchelon1_0_2()
         {
             ClickRange(222, 344, 305, 416);
-            Thread.Sleep(randomize.Next(2000, 2500));
+            Thread.Sleep(randomize.Next(15, 20));
+            ClickRange(222, 344, 305, 416);
+            Thread.Sleep(randomize.Next(2500, 3000));
             ResupplyClick();
         }
 
@@ -350,7 +355,7 @@ namespace KzBot2
                 SelectRepairSlot();
                 Thread.Sleep(randomize.Next(1000, 1500));
                 RepeatLogisticConfirmClick();
-                Thread.Sleep(randomize.Next(4000, 4500));
+                Thread.Sleep(randomize.Next(5500, 6000));
                 TakeFormationScreenShot();
             }
         }
@@ -370,11 +375,11 @@ namespace KzBot2
                 SelectQuickRepair();
                 Thread.Sleep(randomize.Next(1500, 2000));
                 RepairResourceCostOkClick();
-                Thread.Sleep(randomize.Next(2000, 2500));
+                Thread.Sleep(randomize.Next(2500, 3000));
                 ReturnToBaseClick();
-                Thread.Sleep(randomize.Next(1000, 1500));
+                Thread.Sleep(randomize.Next(2500, 3000));
                 ReturnToBaseClick();
-                Thread.Sleep(randomize.Next(4500, 4500));
+                Thread.Sleep(randomize.Next(5500, 6000));
                 TakeFormationScreenShot();
             }
         }
@@ -384,11 +389,11 @@ namespace KzBot2
             if (System.IO.File.Exists(Environment.CurrentDirectory + "\\Screenshots\\repairButtonCurrent.jpg"))
                 System.IO.File.Delete(Environment.CurrentDirectory + "\\Screenshots\\repairButtonCurrent.jpg");
 
-            var ss = new Bitmap(Helper.Screenshot(Helper.FindNox()));
-            var temp = new Bitmap(ss.Clone(new Rectangle(835, 265, 180, 65), ss.PixelFormat));
-            temp.Save(Environment.CurrentDirectory + "\\Screenshots\\repairButtonCurrent.jpg");
+            var ss = Helper.Screenshot(Helper.FindNox()).Clone(new Rectangle(835, 265, 180, 65), PixelFormat.DontCare);
+            //var temp = new Bitmap(ss.Clone(new Rectangle(835, 265, 180, 65), ss.PixelFormat));
+            ss.Save(Environment.CurrentDirectory + "\\Screenshots\\repairButtonCurrent.jpg");
             ss.Dispose();
-            temp.Dispose();
+            //temp.Dispose();
         }
 
         public static void TakeFormationScreenShot()
@@ -396,11 +401,11 @@ namespace KzBot2
             if (System.IO.File.Exists(Environment.CurrentDirectory + "\\Screenshots\\formationButtonCurrent.jpg"))
                 System.IO.File.Delete(Environment.CurrentDirectory + "\\Screenshots\\formationButtonCurrent.jpg");
 
-            var ss = new Bitmap(Helper.Screenshot(Helper.FindNox()));
-            var temp = new Bitmap(ss.Clone(new Rectangle(1050, 440, 210, 90), ss.PixelFormat));
-            temp.Save(Environment.CurrentDirectory + "\\Screenshots\\formationButtonCurrent.jpg");
+            var ss = Helper.Screenshot(Helper.FindNox()).Clone(new Rectangle(1050, 440, 210, 90), PixelFormat.DontCare);
+            //var temp = new Bitmap(ss.Clone(new Rectangle(1050, 440, 210, 90), ss.PixelFormat));
+            ss.Save(Environment.CurrentDirectory + "\\Screenshots\\formationButtonCurrent.jpg");
             ss.Dispose();
-            temp.Dispose();
+            //temp.Dispose();
         }
     }
 }

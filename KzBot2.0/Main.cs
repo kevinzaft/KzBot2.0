@@ -13,6 +13,7 @@ namespace KzBot2
     public partial class Main : Form
     {
         public String SelectedMap = "";
+        public String NoxName = "";
         public Main()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace KzBot2
                 MessageBox.Show("Could not find Nox Player", "Nox Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            NoxName = textBox1.Text;
             GetRuns();
             SelectedMap = "4-3E";
             FormProvider.RunManagerForm.Text = "Running " + SelectedMap;
@@ -43,6 +44,7 @@ namespace KzBot2
                 MessageBox.Show("Could not find Nox Player", "Nox Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            NoxName = textBox1.Text;
             GetRuns();
             SelectedMap = "0-2";
             FormProvider.RunManagerForm.Text = "Running " + SelectedMap;

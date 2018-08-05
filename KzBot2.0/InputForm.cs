@@ -55,6 +55,10 @@ namespace KzBot2
                     N0_2.StartRun(runs, draggerType);
                 }
                 runs--;
+                FormProvider.MainForm.Invoke(new MethodInvoker(() =>
+                {
+                    FormProvider.RunManagerForm.label2.Text = "Runs left: " + runs;
+                }));
             }
 
 

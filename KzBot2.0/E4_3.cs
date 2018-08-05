@@ -60,7 +60,7 @@ namespace KzBot2
             ScriptMethods.SelectEmergency();
             Thread.Sleep(ScriptMethods.randomize.Next(2000, 3000));
             ScriptMethods.Select4_3();
-            Thread.Sleep(ScriptMethods.randomize.Next(1500, 2500));
+            Thread.Sleep(ScriptMethods.randomize.Next(2500, 3000));
             ScriptMethods.NormalBattleClick();
             Thread.Sleep(ScriptMethods.randomize.Next(3000, 4000));
             ScriptMethods.DeployTeam1();

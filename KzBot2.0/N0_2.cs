@@ -24,11 +24,7 @@ namespace KzBot2
             ScriptMethods.Echelon1ChangeUnit();
             Thread.Sleep(ScriptMethods.randomize.Next(2500, 3500));
 
-            if (draggerType == "RF")
-                ScriptMethods.ChangeFilterRF();
-            else if (draggerType == "AR")
-                ScriptMethods.ChangeFilterAR();
-
+            ScriptMethods.ChangeFilterAR();
             Thread.Sleep(ScriptMethods.randomize.Next(1500, 2500));
 
             if (runs % 2 == 0)
@@ -59,7 +55,7 @@ namespace KzBot2
             ScriptMethods.SelectChapter0();
             Thread.Sleep(ScriptMethods.randomize.Next(2000, 3000));
             ScriptMethods.Select0_2();
-            Thread.Sleep(ScriptMethods.randomize.Next(1500, 2500));
+            Thread.Sleep(ScriptMethods.randomize.Next(2500, 3000));
             ScriptMethods.NormalBattleClick();
             Thread.Sleep(ScriptMethods.randomize.Next(3000, 4000));
             ScriptMethods.DeployTeam1_0_2();

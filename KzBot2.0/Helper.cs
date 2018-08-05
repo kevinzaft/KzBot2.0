@@ -34,13 +34,13 @@ namespace KzBot2
         {
             return ((y << 16) | (x & 0xFFFF));
         }
-        public static IntPtr FindNox(string name = "")
+        public static IntPtr FindNox()
         {
-            return FindWindow("Qt5QWindowIcon", name==""?null:name);
+            return FindWindow("Qt5QWindowIcon", String.IsNullOrEmpty(FormProvider.MainForm.NoxName)?null: FormProvider.MainForm.NoxName);
         }
-        public static IntPtr FindNoxInnerScreen(string name = "")
+        public static IntPtr FindNoxInnerScreen()
         {
-            IntPtr NoxhWnd = FindNox(name);
+            IntPtr NoxhWnd = FindNox();
             IntPtr Child1 = FindWindowEx(NoxhWnd, IntPtr.Zero, null, "ScreenBoardClassWindow");
             IntPtr Child2 = FindWindowEx(Child1, IntPtr.Zero, null, "QWidgetClassWindow");
             return Child2;
