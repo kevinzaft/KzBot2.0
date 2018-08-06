@@ -74,7 +74,29 @@ namespace KzBot2
             ClickRange(150, 150, 315, 550);
         }
 
-        public static void SelectUnit1()
+        public static void SelectUnit(int slot)
+        {
+            switch (slot)
+            {
+                case 1:
+                    SelectUnit1();
+                    break;
+                case 2:
+                    SelectUnit2();
+                    break;
+                case 3:
+                    SelectUnit3();
+                    break;
+                case 4:
+                    SelectUnit4();
+                    break;
+                case 5:
+                    SelectUnit5();
+                    break;
+            }
+        }
+
+            public static void SelectUnit1()
         {
             ClickRange(200, 145, 355, 425);
         }
@@ -195,7 +217,7 @@ namespace KzBot2
         public static void ResupplyEchelon1()
         {
             ClickRange(188, 355, 255, 435);
-            Thread.Sleep(randomize.Next(30, 40));
+            Thread.Sleep(randomize.Next(20, 30));
             ClickRange(188, 355, 255, 435);
             Thread.Sleep(randomize.Next(2500, 3000));
             ResupplyClick();

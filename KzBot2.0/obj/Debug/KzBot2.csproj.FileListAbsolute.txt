@@ -37,7 +37,6 @@ C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\obj\Debug\KzBot2.csproj.GenerateRe
 C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\obj\Debug\KzBot2.csproj.CoreCompileInputs.cache
 C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\bin\Debug\KzBot2.exe
 C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\bin\Debug\KzBot2.pdb
-C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\obj\Debug\KzBot2.csprojAssemblyReference.cache
 C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\obj\Debug\KzBot2.exe
 C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\obj\Debug\KzBot2.pdb
 C:\Users\Kevin\Source\Repos\KzBot2.0\KzBot2.0\bin\Debug\KzBot2.exe
@@ -51,3 +50,5 @@ C:\Users\Kevin\Source\Repos\KzBot2.0\KzBot2.0\obj\Debug\KzBot2.csproj.GenerateRe
 C:\Users\Kevin\Source\Repos\KzBot2.0\KzBot2.0\obj\Debug\KzBot2.csproj.CoreCompileInputs.cache
 C:\Users\Kevin\Source\Repos\KzBot2.0\KzBot2.0\obj\Debug\KzBot2.exe
 C:\Users\Kevin\Source\Repos\KzBot2.0\KzBot2.0\obj\Debug\KzBot2.pdb
+C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\obj\Debug\KzBot2.csprojAssemblyReference.cache
+C:\Users\Speed\source\repos\KzBot2.0\KzBot2.0\bin\Debug\KzBot2.exe.config

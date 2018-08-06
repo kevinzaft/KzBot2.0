@@ -1,4 +1,6 @@
-﻿using System.Threading;
+﻿using System;
+using System.Configuration;
+using System.Threading;
 
 namespace KzBot2
 {
@@ -6,6 +8,12 @@ namespace KzBot2
     {
         public static void StartRun(int runs, string draggerType)
         {
+            var dragger1Slot = Int32.Parse(ConfigurationManager.AppSettings["dragger1_slot_02E"]);
+            var dragger2Slot = Int32.Parse(ConfigurationManager.AppSettings["dragger2_slot_02E"]);
+            var clearTimePart1 = Int32.Parse(ConfigurationManager.AppSettings["02N_Part1_cleartime"]);
+            var clearTimePart2 = Int32.Parse(ConfigurationManager.AppSettings["02N_Part2_cleartime"]);
+            var clearTimeOffset = Int32.Parse(ConfigurationManager.AppSettings["clearTimeOffSet"]);
+
             ScriptMethods.TakeFormationScreenShot();
             ScriptMethods.RestartLogis();
 
@@ -24,9 +32,9 @@ namespace KzBot2
             Thread.Sleep(ScriptMethods.randomize.Next(1500, 2500));
 
             if (runs % 2 == 0)
-                ScriptMethods.SelectUnit1();
+                ScriptMethods.SelectUnit(dragger1Slot);
             else
-                ScriptMethods.SelectUnit3();
+                ScriptMethods.SelectUnit(dragger2Slot);
             Thread.Sleep(ScriptMethods.randomize.Next(1500, 2500));
             ScriptMethods.SelectEchelon2();
             Thread.Sleep(ScriptMethods.randomize.Next(1500, 2500));
@@ -34,9 +42,9 @@ namespace KzBot2
             ScriptMethods.Echelon2ChangeUnit();
             Thread.Sleep(ScriptMethods.randomize.Next(2500, 3500));
             if (runs % 2 == 0)
-                ScriptMethods.SelectUnit3();
+                ScriptMethods.SelectUnit(dragger2Slot);
             else
-                ScriptMethods.SelectUnit1();
+                ScriptMethods.SelectUnit(dragger1Slot);
 
             Thread.Sleep(ScriptMethods.randomize.Next(2500, 3500));
             ScriptMethods.ReturnToBaseClick();
@@ -78,7 +86,7 @@ namespace KzBot2
             ScriptMethods.SelectNode4_0_2();
             Thread.Sleep(ScriptMethods.randomize.Next(1500, 2500));
             ScriptMethods.Ok_Execute_End_ButtonClick();
-            Thread.Sleep(ScriptMethods.randomize.Next(140000, 142000));
+            Thread.Sleep(ScriptMethods.randomize.Next(clearTimePart1, clearTimePart1 + clearTimeOffset));
             ScriptMethods.Ok_Execute_End_ButtonClick();
             Thread.Sleep(ScriptMethods.randomize.Next(14500, 15500));
             ScriptMethods.PlanningModeClick();
@@ -92,7 +100,7 @@ namespace KzBot2
             Thread.Sleep(ScriptMethods.randomize.Next(1500, 2500));
 
             ScriptMethods.Ok_Execute_End_ButtonClick();
-            Thread.Sleep(ScriptMethods.randomize.Next(95500, 100000));
+            Thread.Sleep(ScriptMethods.randomize.Next(clearTimePart1, clearTimePart1 + clearTimeOffset));
             ScriptMethods.Ok_Execute_End_ButtonClick();
             Thread.Sleep(ScriptMethods.randomize.Next(11500, 12000));
             ScriptMethods.Ok_Execute_End_ButtonClick();
