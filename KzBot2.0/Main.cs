@@ -24,8 +24,8 @@ namespace KzBot2
                 MessageBox.Show("Could not find Nox Player", "Nox Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            GetRuns();
             SelectedMap = "4-3E";
+            GetRuns();
             FormProvider.RunManagerForm.Text = "Running " + SelectedMap;
 
         }
@@ -38,8 +38,8 @@ namespace KzBot2
                 MessageBox.Show("Could not find Nox Player", "Nox Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            GetRuns();
             SelectedMap = "0-2";
+            GetRuns();
             FormProvider.RunManagerForm.Text = "Running " + SelectedMap;
         }
 

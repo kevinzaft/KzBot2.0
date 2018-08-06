@@ -13,7 +13,14 @@ namespace KzBot2
             InitializeComponent();
         }
 
-        private void InputForm_Load(object sender, EventArgs e) { comboBox1.SelectedIndex = 0; }
+        private void InputForm_Load(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndex = 0;
+            if (FormProvider.MainForm.SelectedMap.Equals("0-2"))
+                comboBox1.Enabled = false;
+            else
+                comboBox1.Enabled = true;
+        }
         private void InputForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();

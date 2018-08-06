@@ -2,6 +2,8 @@
 EDIT: ONLY WORKS WITH WIDESCREEN MONITORS RN (16:9) RATIO. Working on fix for non-widescreen things
 	-Implimented All resolution(16:9) fix. Need more testing. Recommened to stay with 1280x720.
 
+NEW: added config file (KzBot2.exe.config) so users can customize stuff (change the "value" in the "key"s to what you want)
+
 1) Must be using NOX on 1280x720 resolution on Windows
 	-Sometimes NOX doesnt actually use 1280x720 even if you select it and click apply. If this is the case, 
 	apply a different res and change it back to 1280x720 
