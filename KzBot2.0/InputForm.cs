@@ -16,10 +16,15 @@ namespace KzBot2
         private void InputForm_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
-            if (FormProvider.MainForm.SelectedMap.Equals("0-2"))
-                comboBox1.Enabled = false;
-            else
+            if (FormProvider.MainForm.SelectedMap.Equals("4-3E"))
                 comboBox1.Enabled = true;
+            else
+                comboBox1.Enabled = false;
+
+            if (FormProvider.MainForm.SelectedMap.Equals("LogiScript"))
+                numericUpDown1.Enabled = false;
+            else
+                numericUpDown1.Enabled = true;
         }
         private void InputForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -44,6 +49,10 @@ namespace KzBot2
 
         private void ScriptThread(String map)
         {
+            if (map.Equals("LogiScript"))
+            {
+                LogiScript.Start();
+            }
             while (runs > 0)
             {
                 if (map.Equals("4-3E"))
@@ -60,7 +69,6 @@ namespace KzBot2
                     FormProvider.RunManagerForm.label2.Text = "Runs left: " + runs;
                 }));
             }
-
 
             FormProvider.MainForm.Invoke(new MethodInvoker(() => 
             {

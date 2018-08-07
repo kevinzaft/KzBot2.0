@@ -56,6 +56,7 @@
     <Compile Include="InputForm.Designer.cs">
       <DependentUpon>InputForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogiScript.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

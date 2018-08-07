@@ -56,12 +56,27 @@ namespace KzBot2
 
         private void button3_Click(object sender, EventArgs e)
         {
+            NoxName = textBox1.Text;
             ScriptMethods.TakeFormationScreenShotDefault();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            NoxName = textBox1.Text;
             ScriptMethods.TakeRepairScreenShotDefault();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            NoxName = textBox1.Text;
+            if (!NoxOpened())
+            {
+                MessageBox.Show("Could not find Nox Player", "Nox Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SelectedMap = "LogiScript";
+            GetRuns();
+            FormProvider.RunManagerForm.Text = "Running " + SelectedMap;
         }
     }
 }
