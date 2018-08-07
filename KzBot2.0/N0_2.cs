@@ -100,7 +100,7 @@ namespace KzBot2
             Thread.Sleep(ScriptMethods.randomize.Next(1500, 2500));
 
             ScriptMethods.Ok_Execute_End_ButtonClick();
-            Thread.Sleep(ScriptMethods.randomize.Next(clearTimePart1, clearTimePart1 + clearTimeOffset));
+            Thread.Sleep(ScriptMethods.randomize.Next(clearTimePart2, clearTimePart2 + clearTimeOffset));
             ScriptMethods.Ok_Execute_End_ButtonClick();
             Thread.Sleep(ScriptMethods.randomize.Next(11500, 12000));
             ScriptMethods.Ok_Execute_End_ButtonClick();
