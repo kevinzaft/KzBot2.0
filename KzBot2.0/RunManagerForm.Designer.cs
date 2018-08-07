@@ -32,6 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -49,9 +50,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(27, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 13);
+            this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Implement Soon: Show Current Action";
+            this.label1.Text = "Current Action:";
             // 
             // label2
             // 
@@ -62,11 +63,21 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "label2";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(110, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "label3";
+            // 
             // RunManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(252, 108);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -82,5 +93,6 @@
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label3;
     }
 }
