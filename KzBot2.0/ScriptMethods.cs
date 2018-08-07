@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace KzBot2
 {
@@ -60,6 +61,14 @@ namespace KzBot2
                 }
             }
             Helper.SendMessage(NoxChild, (int)WM.WM_LBUTTONUP, 0, Helper.MAKELPARAM((int)(pt2.X * ((double)Helper.GetNoxInnerRes().Width / 1280)), (int)(pt2.Y * ((double)Helper.GetNoxInnerRes().Height / 720))));
+        }
+
+        public static void UpdateCurrentAction(String s)
+        {
+            FormProvider.MainForm.Invoke(new MethodInvoker(() =>
+            {
+                FormProvider.RunManagerForm.label3.Text = s;
+            }));
         }
 
         //______________________________________________________________________________________________________________
