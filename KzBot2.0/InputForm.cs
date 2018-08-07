@@ -84,5 +84,6 @@ namespace KzBot2
             numericUpDown1.Value = 0;
             FormProvider.MainForm.Show();
         }
+
     }
 }

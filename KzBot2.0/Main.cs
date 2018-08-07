@@ -18,6 +18,7 @@ namespace KzBot2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            FormProvider.InputForm = new InputForm();
             NoxName = textBox1.Text;
             if (!NoxOpened())
             {
@@ -32,6 +33,7 @@ namespace KzBot2
 
         private void button2_Click(object sender, EventArgs e)
         {
+            FormProvider.InputForm = new InputForm();
             NoxName = textBox1.Text;
             if (!NoxOpened())
             {
@@ -68,6 +70,7 @@ namespace KzBot2
 
         private void button5_Click(object sender, EventArgs e)
         {
+            FormProvider.InputForm = new InputForm();
             NoxName = textBox1.Text;
             if (!NoxOpened())
             {
