@@ -2,5 +2,5 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/KzBot2/v15/sqlite3/storage.ide
+/.vs/KzBot2/v15
 /KzBot2.0/obj/Debug/KzBot2.csprojResolveAssemblyReference.cache
