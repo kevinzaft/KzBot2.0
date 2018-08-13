@@ -57,7 +57,7 @@ namespace KzBot2
             {
                 if (map.Equals("4-3E"))
                 {
-                    E4_3.StartRun(runs, draggerType);
+                    Night4_3.StartRun();
                 }
                 else
                 {

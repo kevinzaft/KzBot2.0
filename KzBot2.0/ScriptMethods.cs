@@ -160,9 +160,19 @@ namespace KzBot2
             ClickRange(210, 150, 320, 215);
         }
 
+        public static void SelectChapter3()
+        {
+            ClickRange(210, 450, 320, 515);
+        }
+
         public static void SelectEmergency()
         {
             ClickRange(1065, 205, 1135, 225);
+        }
+
+        public static void SelectNight()
+        {
+            ClickRange(1170, 205, 1260, 225);
         }
 
         public static void Select4_3()
@@ -173,6 +183,11 @@ namespace KzBot2
         public static void Select0_2()
         {
             ClickRange(420, 385, 1265, 470);
+        }
+
+        public static void Select3_4()
+        {
+            ClickRange(420, 620, 1265, 705);
         }
 
         public static void NormalBattleClick()
@@ -213,6 +228,18 @@ namespace KzBot2
             Ok_Execute_End_ButtonClick();
         }
 
+        public static void DeployTeam_3_4N()
+        {
+            ClickRange(965, 169, 1030, 230);
+            Thread.Sleep(randomize.Next(2000, 3000));
+            Ok_Execute_End_ButtonClick();
+        }
+
+        public static void CloseNightBattleHint()
+        {
+            ClickRange(170, 140, 265, 485);
+        }
+
         public static void StartOperationClick()
         {
             ClickRange(1000, 635, 1260, 720);
@@ -249,6 +276,11 @@ namespace KzBot2
         public static void MouseDragTopToBottom()
         {
             DragRange(1130, 20, 1270, 20, 820, 710, 1120, 710);
+        }
+
+        public static void MouseDragBottomToTop()
+        {
+            DragRange(820, 710, 1120, 710, 1130, 20, 1270, 20);
         }
 
         public static void SelectNode1()
@@ -373,6 +405,61 @@ namespace KzBot2
             ClickRange(965, 295, 1025, 355);
         }
 
+        public static void SelectNode1_3_4N()
+        {
+            ClickRange(975, 182, 1020, 215);
+        }
+
+        public static void SelectNode2_3_4N()
+        {
+            ClickRange(805, 390, 840, 420);
+        }
+
+        public static void SelectNode3_3_4N()
+        {
+            ClickRange(840, 610, 875, 640);
+        }
+
+        public static void SelectNode4_3_4N()
+        {
+
+        }
+
+        public static void SelectNode5_3_4N()
+        {
+
+        }
+
+        public static void SelectNode6_3_4N()
+        {
+
+        }
+
+        public static void SupportEchelonClick()
+        {
+            ClickRange(5, 460, 115, 515);
+        }
+
+        public static void DeployFriendSupport(bool UseGriffin)
+        {
+            if (UseGriffin)
+                ClickRange(200,180,1100,280);
+            else
+                ClickRange(200, 320, 1100, 420);
+            Thread.Sleep(randomize.Next(2000, 3000));
+            Ok_Execute_End_ButtonClick();
+        }
+
+        public static void ChangeFriendModeEliminate()
+        {
+            DeployTeam_3_4N(); //just using this b/c the coords are already mapped
+            Thread.Sleep(randomize.Next(1500, 2000));
+            DeployTeam_3_4N();
+            Thread.Sleep(randomize.Next(2000, 3000));
+            ClickRange(780,210,915,250);
+            Thread.Sleep(randomize.Next(2000, 3000));
+            ClickRange(90, 180, 250, 250);//clicking somewhere blank just incase
+        }
 
         public static void RestartLogis()
         {
