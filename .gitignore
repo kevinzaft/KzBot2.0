@@ -4,3 +4,6 @@
 
 /.vs/KzBot2/v15/sqlite3/storage.ide
 /KzBot2.0/obj/Debug/KzBot2.csprojResolveAssemblyReference.cache
+/.vs/KzBot2/v15/Server/sqlite3/db.lock
+/.vs/KzBot2/v15/Server/sqlite3/storage.ide
+/.vs/KzBot2/v15/Server/sqlite3/storage.ide-wal

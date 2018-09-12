@@ -99,7 +99,7 @@ namespace KzBot2
             Thread.Sleep(ScriptMethods.randomize.Next(clearTimePart1, clearTimePart1 + clearTimeOffset));
             ScriptMethods.UpdateCurrentAction("Part 1 cleared, waiting for turn 2");
             ScriptMethods.Ok_Execute_End_ButtonClick();
-            Thread.Sleep(ScriptMethods.randomize.Next(14500, 15500));
+            Thread.Sleep(ScriptMethods.randomize.Next(15500, 16500));
 
             ScriptMethods.UpdateCurrentAction("Part 2 planning");
             ScriptMethods.PlanningModeClick();

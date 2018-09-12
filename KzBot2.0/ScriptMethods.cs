@@ -360,7 +360,7 @@ namespace KzBot2
 
         public static void SelectNode4_0_2()
         {
-            ClickRange(500, 270, 550, 305);
+            ClickRange(505, 270, 540, 300);
         }
 
         public static void SelectNode5_0_2()
