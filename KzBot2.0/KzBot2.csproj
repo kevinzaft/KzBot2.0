@@ -64,6 +64,7 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="N0_2.cs" />
+    <Compile Include="N1_4.cs" />
     <Compile Include="Night4_3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,7 +93,9 @@
     <EmbeddedResource Include="RunManagerForm.resx">
       <DependentUpon>RunManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -81,5 +81,19 @@ namespace KzBot2
             GetRuns();
             FormProvider.RunManagerForm.Text = "Running " + SelectedMap;
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FormProvider.InputForm = new InputForm();
+            NoxName = textBox1.Text;
+            if (!NoxOpened())
+            {
+                MessageBox.Show("Could not find Nox Player", "Nox Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SelectedMap = "1-4N";
+            GetRuns();
+            FormProvider.RunManagerForm.Text = "Running " + SelectedMap;
+        }
     }
 }

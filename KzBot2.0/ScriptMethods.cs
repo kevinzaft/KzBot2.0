@@ -160,6 +160,11 @@ namespace KzBot2
             ClickRange(210, 150, 320, 215);
         }
 
+        public static void SelectChapter1()
+        {
+            ClickRange(210, 240, 320, 320);
+        }
+
         public static void SelectChapter3()
         {
             ClickRange(210, 450, 320, 515);
@@ -235,9 +240,15 @@ namespace KzBot2
             Ok_Execute_End_ButtonClick();
         }
 
+        public static void DeployTeam1_1_4N()
+        {
+            ClickRange(200, 410, 265, 460);
+            Thread.Sleep(randomize.Next(2000, 3000));
+            Ok_Execute_End_ButtonClick();
+        }
         public static void CloseNightBattleHint()
         {
-            ClickRange(170, 140, 265, 485);
+            ClickRange(170, 140, 265, 185);
         }
 
         public static void StartOperationClick()
@@ -433,6 +444,31 @@ namespace KzBot2
         public static void SelectNode6_3_4N()
         {
 
+        }
+
+        public static void SelectNode1_1_4N()
+        {
+            ClickRange(200, 350, 265, 450);
+        }
+
+        public static void SelectNode2_1_4N()
+        {
+            ClickRange(415, 500, 444, 545);
+        }
+
+        public static void SelectNode3_1_4N()
+        {
+            ClickRange(688, 320, 720, 363);
+        }
+
+        public static void SelectNode4_1_4N()
+        {
+            ClickRange(495, 363, 530, 395);
+        }
+
+        public static void SelectNode5_1_4N()
+        {
+            ClickRange(255, 720, 310, 745);
         }
 
         public static void SupportEchelonClick()
