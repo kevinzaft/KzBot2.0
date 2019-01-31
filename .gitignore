@@ -4,3 +4,5 @@
 
 /.vs/KzBot2/v15
 /KzBot2.0/obj/Debug/KzBot2.csprojResolveAssemblyReference.cache
+/images/
+wbot.py
